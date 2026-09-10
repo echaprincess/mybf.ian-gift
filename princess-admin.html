@@ -75,7 +75,7 @@ color:#9CA3AF;
 
 <div class="panel">
 <b>🛡 Guardian Status</b>
-<div class="status">⚪ Waiting for Guardian...</div>
+<div class="status" id="guardianStatus">⚪ Waiting for Guardian...</div>
 </div>
 
 <div class="panel">
@@ -96,5 +96,60 @@ color:#9CA3AF;
 Our Little Universe • Princess Edition 🌸
 </div>
 </div>
+
+<script type="module">
+import { firebaseConfig } from "./firebase-config.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+import { getFirestore, doc, onSnapshot } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const statusEl = document.getElementById("guardianStatus");
+
+function formatDate(val) {
+  if (!val) return "-";
+  try {
+    const date = new Date(val);
+    if (!isNaN(date.getTime())) {
+      return date.toLocaleString();
+    }
+  } catch (e) {}
+  return val;
+}
+
+function escapeHtml(str) {
+  if (!str) return "";
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+onSnapshot(doc(db, "guardian", "status"), (docSnap) => {
+  if (docSnap.exists()) {
+    const data = docSnap.data();
+    if (data && data.connected === true) {
+      statusEl.style.background = "#DCFCE7";
+      statusEl.style.color = "#15803D";
+      statusEl.innerHTML = `
+        <div>🟢 Guardian Connected Successfully</div>
+        <div style="font-size:13px; font-weight:normal; margin-top:8px; line-height:1.5; color:#166534;">
+          <b>Guardian:</b> ${escapeHtml(data.name || "-")}<br>
+          <b>Last Seen:</b> ${escapeHtml(formatDate(data.lastSeen))}
+        </div>
+      `;
+      return;
+    }
+  }
+
+  statusEl.style.background = "#FEF3C7";
+  statusEl.style.color = "#B45309";
+  statusEl.innerHTML = "⚪ Waiting for Guardian...";
+}, (error) => {
+  console.error("Error listening to guardian status:", error);
+});
+</script>
 </body>
 </html>

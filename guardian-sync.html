@@ -75,7 +75,7 @@
   <input id="name" placeholder="Guardian Name">
   <input id="birthday" type="date">
 
-  <button onclick="connectGuardian()">Connect Guardian</button>
+  <button id="connectBtn" onclick="connectGuardian()">Connect Guardian</button>
 
   <div id="success">
     <h2 style="color:#16A34A">Connected Successfully ✅</h2>
@@ -90,15 +90,52 @@
   </div>
 </div>
 
-<script>
-function connectGuardian(){
-  const name=document.getElementById('name').value;
-  if(name===''){
+<script type="module">
+import { firebaseConfig } from "./firebase-config.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+window.connectGuardian = async function () {
+  const nameInput = document.getElementById('name');
+  const birthdayInput = document.getElementById('birthday');
+  const btn = document.getElementById('connectBtn');
+  const name = nameInput ? nameInput.value.trim() : '';
+  const birthday = birthdayInput ? birthdayInput.value : '';
+
+  if (!name) {
     alert('Please enter Guardian Name');
     return;
   }
-  document.getElementById('success').style.display='block';
-}
+
+  try {
+    if (btn) {
+      btn.disabled = true;
+      btn.innerText = 'Connecting...';
+    }
+
+    await setDoc(doc(db, "guardian", "status"), {
+      connected: true,
+      name: name,
+      birthday: birthday,
+      lastSeen: new Date().toISOString()
+    });
+
+    document.getElementById('success').style.display = 'block';
+    if (btn) {
+      btn.innerText = 'Connected Successfully ✅';
+    }
+  } catch (error) {
+    console.error("Error connecting guardian:", error);
+    alert("Error connecting guardian: " + error.message);
+    if (btn) {
+      btn.disabled = false;
+      btn.innerText = 'Connect Guardian';
+    }
+  }
+};
 </script>
 
 </body>
