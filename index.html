@@ -5,51 +5,73 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Our Little Universe</title>
 <style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Trebuchet MS',sans-serif;}
 body{
-margin:0;
-font-family:Arial,sans-serif;
-background:linear-gradient(180deg,#FFD9EC,#E8E4FF,#D7EEFF);
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
+  background:linear-gradient(180deg,#FFD8EB,#EADFFF,#D8F0FF);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
 }
 .card{
-background:white;
-width:320px;
-padding:30px;
-border-radius:28px;
-text-align:center;
-box-shadow:0 12px 30px rgba(0,0,0,.15);
+  width:340px;
+  background:rgba(255,255,255,.95);
+  border-radius:35px;
+  padding:30px;
+  text-align:center;
+  box-shadow:0 20px 45px rgba(255,105,180,.25);
 }
+.castle{font-size:70px;margin-bottom:10px;}
 .badge{
-background:#EC4899;
-color:white;
-padding:6px 14px;
-border-radius:20px;
-display:inline-block;
-font-size:12px;
+  display:inline-block;
+  background:#EC4899;
+  color:white;
+  padding:7px 14px;
+  border-radius:30px;
+  font-size:12px;
+  margin-bottom:18px;
 }
-h1{color:#BE185D;}
-p{color:#666;}
+h1{
+  color:#BE185D;
+  margin-bottom:10px;
+}
+p{
+  color:#6B7280;
+  margin:8px 0;
+  line-height:1.5;
+}
 button{
-background:#EC4899;
-color:white;
-border:none;
-padding:14px 20px;
-border-radius:18px;
-font-size:15px;
-margin-top:18px;
+  width:100%;
+  margin-top:20px;
+  background:#EC4899;
+  color:white;
+  border:none;
+  padding:16px;
+  border-radius:18px;
+  font-size:16px;
+  font-weight:bold;
+}
+.hearts{
+  position:absolute;
+  top:20px;
+  width:100%;
+  text-align:center;
+  font-size:24px;
 }
 </style>
 </head>
 <body>
+<div class="hearts">🎀 ☁️ ⭐ 🌸 ☁️ 🎀</div>
 <div class="card">
-<div class="badge">Princess ♥ Guardian</div>
-<h1>🏰 Our Little Universe</h1>
+<div class="badge">Princess 👑 × Guardian 🛡️</div>
+<div class="castle">🏰</div>
+<h1>Our Little Universe</h1>
 <p>Welcome home, Princess Echa & Guardian Ian.</p>
-<p>Grand Release — 17 September 2026 ✨</p>
+<p>Grand Opening</p>
+<h2 style="color:#2563EB;">17 September 2026 ✨</h2>
 <button>🔒 Open The Gate</button>
+<p style="font-size:12px;margin-top:18px;color:#9CA3AF;">Made with love by Princess Echa 🤍</p>
 </div>
 </body>
 </html>
