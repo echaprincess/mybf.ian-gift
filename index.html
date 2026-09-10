@@ -59,12 +59,57 @@ button{
   text-align:center;
   font-size:24px;
 }
+.cloud{
+  position:absolute;
+  font-size:35px;
+  opacity:.8;
+  animation:float 12s linear infinite;
+}
+
+.cloud.one{top:90px;left:-60px;}
+.cloud.two{top:170px;right:-40px;animation-duration:16s;}
+
+.star{
+  position:absolute;
+  color:white;
+  animation:twinkle 2s infinite alternate;
+}
+
+.star.s1{top:70px;left:60px;}
+.star.s2{top:130px;right:70px;}
+.star.s3{bottom:120px;left:80px;}
+
+@keyframes float{
+  from{transform:translateX(-40px);}
+  to{transform:translateX(420px);}
+}
+
+@keyframes twinkle{
+  from{opacity:.3;transform:scale(.8);}
+  to{opacity:1;transform:scale(1.2);}
+}
 </style>
 </head>
 <body>
 <div class="hearts">🎀 ☁️ ⭐ 🌸 ☁️ 🎀</div>
-<div class="card">
+<div class="cloud one">☁️</div>
+<div class="cloud two">☁️</div>
+
+<div class="star s1">⭐</div>
+<div class="star s2">✨</div>
+<div class="star s3">⭐</div>
+  <div class="card">
 <div class="badge">Princess 👑 × Guardian 🛡️</div>
+    <div style="
+background:#DCFCE7;
+color:#166534;
+padding:10px;
+border-radius:16px;
+margin-bottom:18px;
+font-size:14px;
+font-weight:bold;">
+🟢 Guardian Connected
+</div>
 <div class="castle">🏰</div>
 <h1>Our Little Universe</h1>
 <p>Welcome home, Princess Echa & Guardian Ian.</p>
