@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Guardian Synchronization Beta</title>
+
+  <style>
+
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+
+    body{
+
+      background:linear-gradient(180deg,#8EC5FC,#E0C3FC);
+
+      min-height:100vh;
+
+      display:flex;
+
+      justify-content:center;
+
+      align-items:center;
+
+      padding:20px;
+
+    }
+
+    .card{
+
+      background:white;
+
+      width:100%;
+
+      max-width:380px;
+
+      border-radius:30px;
+
+      padding:28px;
+
+      text-align:center;
+
+      box-shadow:0 15px 40px rgba(0,0,0,.15);
+
+    }
+
+    .beta{
+
+      background:#2563EB;
+
+      color:white;
+
+      display:inline-block;
+
+      padding:6px 12px;
+
+      border-radius:999px;
+
+      font-size:12px;
+
+      margin-bottom:15px;
+
+    }
+
+    h1{color:#1E3A8A;margin-bottom:8px}
+
+    p{color:#64748B;font-size:14px;margin-bottom:20px}
+
+    input{
+
+      width:100%;
+
+      padding:14px;
+
+      margin:8px 0;
+
+      border-radius:12px;
+
+      border:1px solid #CBD5E1;
+
+    }
+
+    button{
+
+      width:100%;
+
+      margin-top:15px;
+
+      padding:14px;
+
+      border:none;
+
+      border-radius:14px;
+
+      background:#2563EB;
+
+      color:white;
+
+      font-weight:bold;
+
+      font-size:16px;
+
+    }
+
+    #success{display:none;margin-top:20px}
+
+    .countdown{
+
+      margin-top:20px;
+
+      background:#EFF6FF;
+
+      border-radius:18px;
+
+      padding:15px;
+
+      color:#1E40AF;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+  <div class="beta">BETA v0.9</div>
+
+  <div style="font-size:55px">🛡️</div>
+
+  <h1>Guardian Synchronization</h1>
+
+  <p>Testing connection before the official release.</p>
+
+  <input id="name" placeholder="Guardian Name">
+
+  <input id="birthday" type="date">
+
+  <button onclick="connectGuardian()">Connect Guardian</button>
+
+  <div id="success">
+
+    <h2 style="color:#16A34A">Connected Successfully ✅</h2>
+
+    <p>Your Guardian profile has been synchronized.</p>
+
+    <div class="countdown">
+
+      <b>🔒 Universe Locked</b><br><br>
+
+      Grand Release:<br>
+
+      <strong>17 September 2026</strong><br><br>
+
+      See you on release day, Guardian.
+
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+
+function connectGuardian(){
+
+  const name=document.getElementById('name').value;
+
+  if(name===''){
+
+    alert('Please enter Guardian Name');
+
+    return;
+
+  }
+
+  document.getElementById('success').style.display='block';
+
+}
+
+</script>
+
+</body>
+
+</html>
