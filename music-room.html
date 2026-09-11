@@ -7,218 +7,159 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Trebuchet MS',sans-serif;}
-
 body{
-  background:linear-gradient(180deg,#FFE4F2,#F6E8FF,#DBECFF);
-  color:#BE185D;
-  padding:20px;
+background:linear-gradient(180deg,#FFE4F2,#F6E8FF,#DBECFF);
+padding:22px;
+color:#BE185D;
 }
-
-.header{text-align:center;margin-bottom:20px;}
+.header{text-align:center;margin-bottom:24px;}
 .header h1{font-size:34px;}
 .header p{color:#6B7280;margin-top:6px;}
-
 .player{
-  background:linear-gradient(135deg,#EC4899,#F472B6);
-  border-radius:28px;
-  padding:24px;
-  color:white;
-  text-align:center;
-  box-shadow:0 15px 30px rgba(236,72,153,.25);
+background:linear-gradient(135deg,#EC4899,#F472B6);
+color:white;
+padding:24px;
+border-radius:30px;
+text-align:center;
+box-shadow:0 15px 30px rgba(236,72,153,.25);
 }
-
 .vinyl{
-  width:140px;
-  height:140px;
-  margin:auto;
-  border-radius:50%;
-  background:radial-gradient(circle,#444 15%,#111 35%,#333 60%,#111 100%);
-  border:8px solid rgba(255,255,255,.35);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:38px;
-  animation:spin 8s linear infinite;
+width:150px;height:150px;border-radius:50%;
+margin:auto;
+background:radial-gradient(circle,#444 15%,#111 40%,#444 70%,#111 100%);
+border:8px solid rgba(255,255,255,.3);
+display:flex;align-items:center;justify-content:center;
+font-size:36px;
+animation:spin 8s linear infinite;
 }
-
-@keyframes spin{from{transform:rotate(0);}to{transform:rotate(360deg);}}
-
-.controls{display:flex;justify-content:center;gap:26px;font-size:28px;margin-top:18px;}
-
-.section{margin-top:30px;}
-.section h2{font-size:22px;margin-bottom:14px;}
-
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.controls{display:flex;justify-content:center;gap:28px;font-size:28px;margin-top:18px;}
+.section{margin-top:34px;}
+.section h2{margin-bottom:16px;}
 .card{
-  background:white;
-  border-radius:22px;
-  padding:18px;
-  margin-bottom:14px;
-  box-shadow:0 8px 20px rgba(236,72,153,.12);
+background:white;
+border-radius:24px;
+padding:18px;
+margin-bottom:16px;
+box-shadow:0 10px 20px rgba(236,72,153,.12);
 }
-
-.card small{color:#EC4899;font-weight:bold;letter-spacing:1px;}
+.card small{color:#EC4899;font-weight:bold;}
 .card h3{margin:8px 0;color:#BE185D;}
-.card p{color:#6B7280;font-size:14px;line-height:1.5;}
-
+.card p{color:#6B7280;line-height:1.5;font-size:14px;}
 .spotify{
-  display:block;
-  text-decoration:none;
-  background:#1DB954;
-  color:white;
-  padding:13px;
-  border-radius:16px;
-  text-align:center;
-  font-weight:bold;
-  margin-top:12px;
+display:block;
+margin-top:14px;
+background:#1DB954;
+color:white;
+padding:14px;
+border-radius:16px;
+text-align:center;
+text-decoration:none;
+font-weight:bold;
 }
-
-.mood{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
-
-.mood-box{
-  background:#FFF4FA;
-  border-radius:18px;
-  padding:16px;
-  text-align:center;
-}
-
-.mood-box span{font-size:28px;display:block;margin-bottom:8px;}
-
+.mood-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+.mood{background:#FFF4FB;padding:16px;border-radius:18px;text-align:center;}
+.mood span{font-size:30px;display:block;margin-bottom:8px;}
 .back{
-  display:block;
-  margin-top:30px;
-  background:#EC4899;
-  color:white;
-  text-decoration:none;
-  text-align:center;
-  padding:16px;
-  border-radius:18px;
-  font-weight:bold;
+display:block;
+margin-top:34px;
+background:#EC4899;
+color:white;
+padding:16px;
+text-align:center;
+border-radius:18px;
+text-decoration:none;
+font-weight:bold;
 }
-
 .footer{text-align:center;color:#999;font-size:12px;margin-top:24px;}
 </style>
 </head>
 <body>
-
 <div class="header">
-  <div style="font-size:50px">🎧</div>
-  <h1>Music Room</h1>
-  <p>Every playlist has a memory. Every song has a story.</p>
+<div style="font-size:50px">🎧</div>
+<h1>Music Room</h1>
+<p>Every playlist has a memory. Every song has a story.</p>
 </div>
-
 <div class="player">
-  <div class="vinyl">🎀</div>
-  <h2 style="margin-top:18px">Ian × Echa Playlist</h2>
-  <p>Our Little Universe Soundtrack</p>
-
-  <div class="controls">
-    <span>⏮️</span>
-    <span>▶️</span>
-    <span>⏭️</span>
-  </div>
+<div class="vinyl">🎀</div>
+<h2 style="margin-top:18px">Ian × Echa Playlist</h2>
+<p>Our Little Universe Soundtrack</p>
+<div class="controls">
+<span>⏮️</span>
+<span>▶️</span>
+<span>⏭️</span>
 </div>
-
+</div>
 <div class="section">
-  <h2>💙 Ian × Echa Playlist</h2>
-
-  <div class="card">
-    <small>COLLAB PLAYLIST</small>
-    <h3>Princess Echa × Guardian Ian</h3>
-    <p>
-      Playlist collaboration yang kalian bikin bareng.
-      Semua lagu perjalanan, random send lagu, dan lagu favorit berdua nanti masuk sini.
-    </p>
-
-    <!-- GANTI LINK SPOTIFY PLAYLIST COLLAB DI SINI -->
-    <a class="spotify" href="#">🎧 Open Spotify Playlist</a>
-  </div>
+<h2>💙 Ian × Echa Playlist</h2>
+<div class="card">
+<small>COLLAB PLAYLIST</small>
+<h3>Princess Echa × Guardian Ian</h3>
+<p>Playlist collaboration yang kalian bikin berdua.</p>
+<a class="spotify" href="https://open.spotify.com/playlist/7KAtx1ihS4vdjVcdI5pJb0" target="_blank">🎧 Open Our Playlist</a>
 </div>
-
+<div class="card">
+<small>PRINCESS PLAYLIST</small>
+<h3>Echa's Daily Playlist</h3>
+<p>Playlist utama yang paling sering kamu dengerin.</p>
+<a class="spotify" href="https://open.spotify.com/playlist/6Q9nQactoasvya7zQmy4PK" target="_blank">🌸 Open Princess Playlist</a>
+</div>
+<div class="card">
+<small>COFFEE DATE</small>
+<h3>Coffee & Study Playlist</h3>
+<p>Playlist buat ngoding, baca buku, atau ngopi.</p>
+<a class="spotify" href="https://open.spotify.com/playlist/4lscWbdYDo6g4f7sNbCXSO" target="_blank">☕ Open Coffee Playlist</a>
+</div>
+</div>
 <div class="section">
-  <h2>🌸 Laufey Corner</h2>
-
-  <div class="card">
-    <small>SOFT MORNING</small>
-    <h3>Coffee Date Playlist</h3>
-    <p>
-      Semua lagu Laufey untuk pagi, hujan, baca buku, dan quality time.
-    </p>
-  </div>
-
-  <div class="card">
-    <small>PRINCESS PLAYLIST</small>
-    <h3>Pink Ribbon Mood</h3>
-    <p>
-      Lagu-lagu yang menurut Echa punya vibes coquette dan lembut.
-    </p>
-  </div>
+<h2>🌸 Laufey Corner</h2>
+<div class="card">
+<small>FAVORITE ARTIST</small>
+<h3>Laufey Collection</h3>
+<p>Semua lagu Laufey yang jadi comfort songs Princess.</p>
+<a class="spotify" href="https://open.spotify.com/artist/7gW0r5CkdEUMm42w9XpyZO" target="_blank">🎻 Open Laufey</a>
 </div>
-
+</div>
 <div class="section">
-  <h2>🌙 Midnight Ride</h2>
-
-  <div class="card">
-    <small>NIGHT DRIVE</small>
-    <h3>Late Night Touring</h3>
-    <p>
-      Cigarettes After Sex • Joji • Lana Del Rey • Arctic Monkeys • Billie Eilish.
-    </p>
-  </div>
+<h2>🌙 Midnight Drive</h2>
+<div class="card">
+<small>NIGHT DRIVE</small>
+<h3>Cigarettes After Sex</h3>
+<p>Playlist buat touring malam atau perjalanan jauh.</p>
+<a class="spotify" href="https://open.spotify.com/artist/1QAJqy2dA3ihHBFIHRphZj" target="_blank">🌌 Open CAS</a>
 </div>
-
+<div class="card">
+<small>LATE NIGHT FEELS</small>
+<h3>Lana Del Rey</h3>
+<p>Vintage, dreamy, dan midnight feelings.</p>
+<a class="spotify" href="https://open.spotify.com/artist/00FQb4jTyendYWaN8pK0wa" target="_blank">🌹 Open Lana</a>
+</div>
+</div>
 <div class="section">
-  <h2>💌 Memory Songs</h2>
-
-  <div class="card">
-    <small>BROMO ERA</small>
-    <h3>Cold Sunrise Playlist</h3>
-    <p>Playlist yang mengingatkan ke Bromo.</p>
-  </div>
-
-  <div class="card">
-    <small>DIENG ERA</small>
-    <h3>Proposal Playlist</h3>
-    <p>Black cat bracelet, resin flower necklace, dan malam proposal.</p>
-  </div>
-
-  <div class="card">
-    <small>TOURING ERA</small>
-    <h3>Ride Together</h3>
-    <p>Lagu untuk perjalanan motor kalian.</p>
-  </div>
+<h2>💌 Memory Songs</h2>
+<div class="card">
+<small>BROMO ERA</small>
+<p>Lagu yang bakal kita isi khusus momen Bromo.</p>
 </div>
-
+<div class="card">
+<small>DIENG ERA</small>
+<p>Lagu yang mengingatkan malam proposal, black cat bracelet, dan resin flower necklace.</p>
+</div>
+<div class="card">
+<small>TOURING ERA</small>
+<p>Playlist untuk Rahtawu, Jepara, dan perjalanan motor kalian.</p>
+</div>
+</div>
 <div class="section">
-  <h2>🎀 Mood Shelf</h2>
-
-  <div class="mood">
-    <div class="mood-box">
-      <span>🌸</span>
-      Soft Princess
-    </div>
-
-    <div class="mood-box">
-      <span>☕</span>
-      Coffee Date
-    </div>
-
-    <div class="mood-box">
-      <span>🌙</span>
-      Midnight Ride
-    </div>
-
-    <div class="mood-box">
-      <span>🤍</span>
-      Hug Me Playlist
-    </div>
-  </div>
+<h2>🎀 Mood Shelf</h2>
+<div class="mood-grid">
+<div class="mood"><span>🌸</span>Soft Princess</div>
+<div class="mood"><span>☕</span>Coffee Date</div>
+<div class="mood"><span>🌙</span>Midnight Ride</div>
+<div class="mood"><span>🤍</span>Hug Me Playlist</div>
 </div>
-
+</div>
 <a class="back" href="castle-map.html">🏰 Back to Castle Map</a>
-
-<div class="footer">
-Made with love by Princess Echa 🎀
-</div>
-
+<div class="footer">Made with love by Princess Echa 🎀</div>
 </body>
 </html>
