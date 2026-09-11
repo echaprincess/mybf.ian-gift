@@ -3,150 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Castle Map — Our Little Universe</title>
-
+<title>Castle Map</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
-
 body{
-background:linear-gradient(180deg,#FFE1EF,#F4E8FF,#DDEFFF);
-min-height:100vh;
-padding:24px;
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:linear-gradient(#ffe4f2,#f3e8ff,#dbeafe);
+  padding:20px;
 }
 
-.header{
-text-align:center;
-margin-bottom:24px;
+.header{text-align:center;}
+.header h1{color:#ec4899;}
+
+.card{
+  background:white;
+  border-radius:24px;
+  padding:20px;
+  max-width:420px;
+  margin:20px auto;
+  box-shadow:0 10px 25px rgba(236,72,153,.2);
 }
 
-.header h1{
-color:#BE185D;
-font-size:30px;
-}
-
-.header p{
-color:#666;
-margin-top:8px;
-}
-
-.castle-card{
-background:white;
-border-radius:28px;
-padding:24px;
-box-shadow:0 15px 30px rgba(236,72,153,.15);
-max-width:420px;
-margin:auto;
-}
-
-.castle-emoji{
-font-size:70px;
-text-align:center;
-margin-bottom:10px;
-}
-
-.progress-box{
-background:#FFF5FA;
-padding:16px;
-border-radius:20px;
-margin-bottom:20px;
-}
-
-.progress-title{
-font-size:13px;
-color:#EC4899;
-margin-bottom:8px;
-font-weight:bold;
-}
-
-.bar{
-background:#FBCFE8;
-height:10px;
-border-radius:999px;
-overflow:hidden;
-}
-
-.fill{
-height:100%;
-width:11%;
-background:linear-gradient(90deg,#EC4899,#60A5FA);
-border-radius:999px;
-}
-
-.room-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:12px;
-margin-top:10px;
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
 }
 
 .room{
-background:#FFF1F7;
-padding:16px 10px;
-border-radius:18px;
-text-decoration:none;
-text-align:center;
-color:#BE185D;
-font-weight:bold;
-font-size:13px;
-transition:.2s;
+  background:#fff1f7;
+  border-radius:16px;
+  padding:16px;
+  text-align:center;
+  text-decoration:none;
+  color:#be185d;
+  font-weight:bold;
 }
 
-.room:hover{
-transform:translateY(-3px);
-background:#FCE7F3;
+.room:hover{background:#fce7f3;}
+
+.progress{
+  background:#fff5fa;
+  padding:12px;
+  border-radius:16px;
+  margin-bottom:18px;
 }
 
-.footer{
-text-align:center;
-margin-top:24px;
-font-size:12px;
-color:#888;
+.bar{
+  background:#fbcfe8;
+  height:10px;
+  border-radius:999px;
+  overflow:hidden;
+}
+
+.fill{
+  width:11%;
+  height:100%;
+  background:#ec4899;
 }
 </style>
 </head>
-
 <body>
 
 <div class="header">
 <h1>🏰 Castle Map</h1>
-<p>Choose a room inside Our Little Universe.</p>
+<p>Choose your destination inside Our Little Universe.</p>
 </div>
 
-<div class="castle-card">
+<div class="card">
 
-<div class="castle-emoji">🏰</div>
-
-<div class="progress-box">
-<div class="progress-title">✨ Castle Progress</div>
+<div class="progress">
+<b>✨ Progress 2 / 18 Rooms</b>
 <div class="bar"><div class="fill"></div></div>
-<p style="margin-top:8px;color:#666;font-size:13px;">2 of 18 Rooms Completed</p>
 </div>
 
-<div class="room-grid">
+<div class="grid">
 <a class="room" href="#">👑 Princess Room</a>
 <a class="room" href="#">🛡 Guardian Room</a>
 <a class="room" href="#">🎧 Music Room</a>
 <a class="room" href="#">💌 Memory Room</a>
 <a class="room" href="#">🏍 Touring Room</a>
-<a class="room" href="#">❤️ Promise Room</a>
 <a class="room" href="#">🌸 Healing Room</a>
-<a class="room" href="#">📖 Story Room</a>
-<a class="room" href="#">🖼 Scrapbook Room</a>
-<a class="room" href="#">🎮 Guardian Lab</a>
-<a class="room" href="#">🎁 Gift Room</a>
-<a class="room" href="#">🌙 Dream Room</a>
-<a class="room" href="#">📷 Gallery Room</a>
+<a class="room" href="#">❤️ Promise Room</a>
 <a class="room" href="#">☕ Cafe Room</a>
-<a class="room" href="#">🌻 Garden Room</a>
-<a class="room" href="#">⭐ Wish Room</a>
-<a class="room" href="#">💍 Future Room</a>
+<a class="room" href="#">📸 Gallery Room</a>
+<a class="room" href="#">🌙 Dream Room</a>
+<a class="room" href="#">🎁 Gift Room</a>
 <a class="room" href="#">🗝 Secret Room</a>
+<a class="room" href="#">🌻 Garden Room</a>
+<a class="room" href="#">📖 Story Room</a>
+<a class="room" href="#">🎮 Guardian Lab</a>
+<a class="room" href="#">🧸 Plushie Room</a>
+<a class="room" href="#">🌎 Future Room</a>
+<a class="room" href="#">⭐ Wish Room</a>
 </div>
 
-</div>
-
-<div class="footer">
-Princess Echa ♥ Guardian Ian\n18 Rooms Adventure Begins ✨
 </div>
 
 </body>
