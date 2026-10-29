@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#ffe4f2">
 <title>🎧 Music Room | Our Little Universe</title>
+
 <style>
 :root {
   --pink: #ec4899;
@@ -12,13 +13,15 @@
   --lavender: #e9d5ff;
   --blue: #dbeafe;
   --text: #6b6075;
-  --white: rgba(255,255,255,.88);
+  --white: rgba(255,255,255,.9);
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
 body {
   min-height: 100vh;
   padding: 22px 15px 35px;
@@ -29,35 +32,43 @@ body {
     radial-gradient(circle at 90% 30%, #e4f0ff 0, transparent 30%),
     linear-gradient(160deg, #ffe4f2, #f6e8ff 55%, #dbeafe);
 }
+
 button, a {
   -webkit-tap-highlight-color: transparent;
 }
+
 button {
   font: inherit;
 }
+
 .container {
   max-width: 680px;
   margin: auto;
 }
+
 .header {
   text-align: center;
   padding: 12px 8px 25px;
 }
+
 .header-icon {
   font-size: 48px;
   margin-bottom: 8px;
   filter: drop-shadow(0 5px 7px #f9a8d4);
 }
+
 .header h1 {
   font-size: clamp(30px, 7vw, 42px);
   letter-spacing: -1px;
 }
+
 .header p {
   color: var(--text);
   margin-top: 8px;
   font-size: 14px;
   line-height: 1.7;
 }
+
 .badge {
   display: inline-block;
   margin-top: 13px;
@@ -68,6 +79,7 @@ button {
   font-size: 11px;
   letter-spacing: 1px;
 }
+
 .panel {
   background: var(--white);
   border: 1px solid rgba(255,255,255,.9);
@@ -77,6 +89,7 @@ button {
   box-shadow: 0 12px 30px rgba(190,24,93,.08);
   backdrop-filter: blur(10px);
 }
+
 .player {
   color: white;
   text-align: center;
@@ -85,6 +98,7 @@ button {
   padding: 27px 20px;
   overflow: hidden;
 }
+
 .vinyl-wrap {
   width: 164px;
   height: 164px;
@@ -92,11 +106,11 @@ button {
   display: grid;
   place-items: center;
 }
+
 .vinyl {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  position: relative;
   display: grid;
   place-items: center;
   background: repeating-radial-gradient(
@@ -109,13 +123,7 @@ button {
   border: 5px solid rgba(255,255,255,.5);
   box-shadow: 0 10px 28px rgba(70,20,70,.25);
 }
-.vinyl::before {
-  content: "";
-  position: absolute;
-  inset: 13px;
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 50%;
-}
+
 .vinyl-label {
   width: 52px;
   height: 52px;
@@ -127,21 +135,25 @@ button {
   font-size: 23px;
   border: 3px solid #fff;
 }
+
 .vinyl.playing {
   animation: spin 7s linear infinite;
 }
+
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+
 .player h2 {
   font-size: 23px;
   margin-bottom: 8px;
 }
+
 .player .subtitle {
   font-size: 13px;
-  opacity: .92;
   line-height: 1.6;
 }
+
 .status {
   display: inline-block;
   margin-top: 15px;
@@ -150,16 +162,19 @@ button {
   background: rgba(255,255,255,.2);
   font-size: 11px;
 }
+
 .section-title {
   font-size: 21px;
   margin: 30px 3px 15px;
 }
+
 .section-intro {
   color: var(--text);
   font-size: 13px;
   line-height: 1.7;
   margin: -6px 3px 15px;
 }
+
 .playlist-card {
   background: var(--white);
   border-radius: 23px;
@@ -168,11 +183,13 @@ button {
   border: 1px solid rgba(255,255,255,.9);
   box-shadow: 0 8px 20px rgba(190,24,93,.06);
 }
+
 .card-top {
   display: flex;
   align-items: flex-start;
   gap: 13px;
 }
+
 .card-icon {
   width: 49px;
   height: 49px;
@@ -183,21 +200,25 @@ button {
   font-size: 24px;
   background: linear-gradient(135deg, #fce7f3, #ede9fe);
 }
+
 .eyebrow {
   font-size: 10px;
   font-weight: bold;
   letter-spacing: 1.2px;
   color: var(--pink);
 }
+
 .playlist-card h3 {
   font-size: 17px;
   margin: 6px 0;
 }
+
 .playlist-card p {
   color: var(--text);
   font-size: 13px;
   line-height: 1.65;
 }
+
 .action {
   width: 100%;
   min-height: 44px;
@@ -213,42 +234,50 @@ button {
   font-weight: bold;
   font-size: 13px;
   cursor: pointer;
-  transition: transform .2s, opacity .2s;
+  transition: transform .2s;
 }
+
 .action:active {
   transform: scale(.98);
 }
+
 .spotify-button {
   background: #1db954;
   color: white;
 }
+
 .secondary-button {
   background: #fce7f3;
   color: var(--deep-pink);
 }
+
 .embed {
   margin-top: 16px;
   overflow: hidden;
   border-radius: 15px;
   background: #f3e8ff;
 }
+
 .embed iframe {
   display: block;
   width: 100%;
   height: 152px;
   border: 0;
 }
+
 .embed-note {
   font-size: 11px;
   color: var(--text);
   margin-top: 10px;
   line-height: 1.6;
 }
+
 .mood-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0,1fr));
   gap: 11px;
 }
+
 .mood-button {
   min-height: 105px;
   border: 2px solid transparent;
@@ -259,22 +288,27 @@ button {
   cursor: pointer;
   transition: .2s;
 }
+
 .mood-button:nth-child(2) { background: #fff7ed; }
 .mood-button:nth-child(3) { background: #eef2ff; }
 .mood-button:nth-child(4) { background: #f0fdf4; }
+
 .mood-button.selected {
   border-color: #ec4899;
   box-shadow: 0 5px 15px rgba(236,72,153,.12);
   transform: translateY(-2px);
 }
+
 .mood-emoji {
   display: block;
   font-size: 28px;
   margin-bottom: 8px;
 }
+
 .mood-button strong {
   font-size: 12px;
 }
+
 .mood-result {
   margin-top: 13px;
   padding: 15px;
@@ -284,6 +318,7 @@ button {
   font-size: 13px;
   line-height: 1.7;
 }
+
 .memory {
   display: flex;
   gap: 13px;
@@ -291,23 +326,28 @@ button {
   padding: 15px 0;
   border-bottom: 1px dashed #f3b8d6;
 }
+
 .memory:last-child {
   border-bottom: none;
   padding-bottom: 0;
 }
+
 .memory-icon {
   font-size: 26px;
   flex-shrink: 0;
 }
+
 .memory h3 {
   font-size: 15px;
   margin-bottom: 5px;
 }
+
 .memory p {
   color: var(--text);
   font-size: 12px;
   line-height: 1.7;
 }
+
 .note {
   border-radius: 22px;
   padding: 22px;
@@ -317,10 +357,12 @@ button {
   line-height: 1.8;
   font-size: 13px;
 }
-.note .big-heart {
+
+.big-heart {
   font-size: 29px;
   margin-bottom: 8px;
 }
+
 .back {
   display: block;
   padding: 16px;
@@ -334,6 +376,7 @@ button {
   font-weight: bold;
   box-shadow: 0 8px 18px rgba(236,72,153,.2);
 }
+
 .footer {
   text-align: center;
   color: #93859a;
@@ -341,6 +384,7 @@ button {
   line-height: 1.8;
   margin-top: 23px;
 }
+
 @media (max-width: 380px) {
   body { padding: 15px 11px 28px; }
   .panel { padding: 17px; }
@@ -348,6 +392,7 @@ button {
   .vinyl-wrap { width: 145px; height: 145px; }
   .vinyl { width: 135px; height: 135px; }
 }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: .01ms !important;
@@ -358,199 +403,221 @@ button {
 }
 </style>
 </head>
+
 <body>
 <main class="container">
-  <header class="header">
-    <div class="header-icon">🎧</div>
-    <h1>Music Room</h1>
-    <p>Every playlist has a memory.<br>Every song has a story. 🎀</p>
-    <span class="badge">OUR LITTLE UNIVERSE · SOUNDTRACK</span>
-  </header>
-  <section class="panel player" aria-label="Music Room introduction">
-    <div class="vinyl-wrap">
-      <div class="vinyl" id="vinyl">
-        <div class="vinyl-label">🎀</div>
-      </div>
+
+<header class="header">
+  <div class="header-icon">🎧</div>
+  <h1>Music Room</h1>
+  <p>Every playlist has a memory.<br>Every song has a story. 🎀</p>
+  <span class="badge">OUR LITTLE UNIVERSE · SOUNDTRACK</span>
+</header>
+
+<section class="panel player">
+  <div class="vinyl-wrap">
+    <div class="vinyl" id="vinyl">
+      <div class="vinyl-label">🎀</div>
     </div>
-    <h2>Ian × Echa Playlist</h2>
-    <p class="subtitle">A little soundtrack for our little universe.</p>
-    <span class="status" id="playerStatus">♡ Choose a playlist below</span>
-  </section>
-  <h2 class="section-title">💗 Our Playlists</h2>
-  <p class="section-intro">Pilih playlist yang ingin kamu dengarkan.</p>
-  <article class="playlist-card">
-    <div class="card-top">
-      <div class="card-icon">💙</div>
-      <div>
-        <div class="eyebrow">COLLAB PLAYLIST</div>
-        <h3>Princess Echa × Guardian Ian</h3>
-        <p>Playlist kolaborasi untuk soundtrack universe kita.</p>
-      </div>
-    </div>
-    <a class="action spotify-button"
-       href="https://open.spotify.com/playlist/7KAtx1ihS4vdjVcdI5pJb0"
-       target="_blank" rel="noopener noreferrer"
-       data-playlist="Our Playlist">🎧 Open Our Playlist ↗</a>
-    <div class="embed">
-      <iframe
-        src="https://open.spotify.com/embed/playlist/7KAtx1ihS4vdjVcdI5pJb0?utm_source=generator"
-        title="Our Playlist Spotify Player"
-        loading="lazy"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        allowfullscreen></iframe>
-    </div>
-    <p class="embed-note">Jika pemutar tidak muncul, buka playlist melalui tombol hijau di atas.</p>
-  </article>
-  <article class="playlist-card">
-    <div class="card-top">
-      <div class="card-icon">🌸</div>
-      <div>
-        <div class="eyebrow">PRINCESS PLAYLIST</div>
-        <h3>Echa's Daily Playlist</h3>
-        <p>Ruang untuk lagu-lagu yang menemani hari-hari Echa.</p>
-      </div>
-    </div>
-    <a class="action spotify-button"
-       href="https://open.spotify.com/playlist/6Q9nQactoasvya7zQmy4PK"
-       target="_blank" rel="noopener noreferrer"
-       data-playlist="Princess Playlist">🌷 Open Princess Playlist ↗</a>
-  </article>
-  <article class="playlist-card">
-    <div class="card-top">
-      <div class="card-icon">☕</div>
-      <div>
-        <div class="eyebrow">COFFEE DATE</div>
-        <h3>Coffee & Study</h3>
-        <p>Untuk waktu ngopi, membaca buku, atau mengerjakan project.</p>
-      </div>
-    </div>
-    <a class="action spotify-button"
-       href="https://open.spotify.com/playlist/4lscWbdYDo6g4f7sNbCXSO"
-       target="_blank" rel="noopener noreferrer"
-       data-playlist="Coffee Playlist">☕ Open Coffee Playlist ↗</a>
-  </article>
-  <h2 class="section-title">🎼 Artist Corners</h2>
-  <article class="playlist-card">
-    <div class="card-top">
-      <div class="card-icon">🎻</div>
-      <div>
-        <div class="eyebrow">SOFT & DREAMY</div>
-        <h3>Laufey Corner</h3>
-        <p>Tempat untuk menikmati musik Laufey yang lembut dan dreamy.</p>
-      </div>
-    </div>
-    <a class="action spotify-button"
-       href="https://open.spotify.com/artist/7gW0r5CkdEUMm42w9XpyZO"
-       target="_blank" rel="noopener noreferrer"
-       data-playlist="Laufey">🎻 Explore Laufey ↗</a>
-  </article>
-  <article class="playlist-card">
-    <div class="card-top">
-      <div class="card-icon">🌙</div>
-      <div>
-        <div class="eyebrow">MIDNIGHT DRIVE</div>
-        <h3>Cigarettes After Sex</h3>
-        <p>Nuansa ambient untuk menemani perjalanan dan malam yang tenang.</p>
-      </div>
-    </div>
-    <a class="action spotify-button"
-       href="https://open.spotify.com/artist/1QAJqy2dA3ihHBFIHRphZj"
-       target="_blank" rel="noopener noreferrer"
-       data-playlist="Cigarettes After Sex">🌌 Explore CAS ↗</a>
-  </article>
-  <article class="playlist-card">
-    <div class="card-top">
-      <div class="card-icon">🌹</div>
-      <div>
-        <div class="eyebrow">VINTAGE & DREAMY</div>
-        <h3>Lana Del Rey</h3>
-        <p>Sudut untuk musik dengan nuansa vintage dan cinematic.</p>
-      </div>
-    </div>
-    <a class="action spotify-button"
-       href="https://open.spotify.com/artist/00FQb4jTyendYWaN8pK0wa"
-       target="_blank" rel="noopener noreferrer"
-       data-playlist="Lana Del Rey">🌹 Explore Lana ↗</a>
-  </article>
-  <h2 class="section-title">🎀 Choose Your Mood</h2>
-  <p class="section-intro">Pilih suasana hatimu untuk mendapatkan rekomendasi kategori.</p>
-  <div class="mood-grid">
-    <button class="mood-button" data-mood="princess" aria-pressed="false">
-      <span class="mood-emoji">🌸</span>
-      <strong>Soft Princess</strong>
-    </button>
-    <button class="mood-button" data-mood="coffee" aria-pressed="false">
-      <span class="mood-emoji">☕</span>
-      <strong>Coffee Date</strong>
-    </button>
-    <button class="mood-button" data-mood="midnight" aria-pressed="false">
-      <span class="mood-emoji">🌙</span>
-      <strong>Midnight Ride</strong>
-    </button>
-    <button class="mood-button" data-mood="comfort" aria-pressed="false">
-      <span class="mood-emoji">🤍</span>
-      <strong>Comfort Songs</strong>
-    </button>
   </div>
-  <div class="mood-result" id="moodResult" aria-live="polite">
-    Pilih satu mood di atas untuk melihat rekomendasinya. 💌
+  <h2>Ian × Echa Playlist</h2>
+  <p class="subtitle">A little soundtrack for our little universe.</p>
+  <span class="status" id="playerStatus">♡ Choose a playlist below</span>
+</section>
+
+<h2 class="section-title">💗 Our Playlists</h2>
+<p class="section-intro">Pilih playlist yang ingin kamu dengarkan.</p>
+
+<article class="playlist-card">
+  <div class="card-top">
+    <div class="card-icon">💙</div>
+    <div>
+      <div class="eyebrow">COLLAB PLAYLIST</div>
+      <h3>Princess Echa × Guardian Ian</h3>
+      <p>Playlist kolaborasi untuk soundtrack universe kita.</p>
+    </div>
   </div>
-  <h2 class="section-title">💌 Our Song Memories</h2>
-  <p class="section-intro">Beberapa bab perjalanan yang bisa kita lengkapi dengan lagu pilihan kita.</p>
-  <section class="panel">
-    <div class="memory">
-      <div class="memory-icon">🌋</div>
-      <div>
-        <h3>Bromo Era</h3>
-        <p>Lagu untuk perjalanan, pemandangan, dan kenangan Bromo.</p>
-      </div>
+  <a class="action spotify-button"
+     href="https://open.spotify.com/playlist/7KAtx1ihS4vdjVcdI5pJb0"
+     target="_blank" rel="noopener noreferrer"
+     data-playlist="Our Playlist">🎧 Open Our Playlist ↗</a>
+  <div class="embed">
+    <iframe
+      src="https://open.spotify.com/embed/playlist/7KAtx1ihS4vdjVcdI5pJb0?utm_source=generator"
+      title="Our Playlist Spotify Player"
+      loading="lazy"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      allowfullscreen></iframe>
+  </div>
+  <p class="embed-note">Jika pemutar tidak muncul, buka playlist melalui tombol hijau di atas.</p>
+</article>
+
+<article class="playlist-card">
+  <div class="card-top">
+    <div class="card-icon">🌸</div>
+    <div>
+      <div class="eyebrow">PRINCESS PLAYLIST</div>
+      <h3>Echa's Daily Playlist</h3>
+      <p>Ruang untuk lagu-lagu yang menemani hari-hari Echa.</p>
     </div>
-    <div class="memory">
-      <div class="memory-icon">🌙</div>
-      <div>
-        <h3>Dieng Era</h3>
-        <p>Tempat untuk lagu yang cocok dengan kenangan Dieng dan momen proposal.</p>
-      </div>
+  </div>
+  <a class="action spotify-button"
+     href="https://open.spotify.com/playlist/6Q9nQactoasvya7zQmy4PK"
+     target="_blank" rel="noopener noreferrer"
+     data-playlist="Princess Playlist">🌷 Open Princess Playlist ↗</a>
+</article>
+
+<article class="playlist-card">
+  <div class="card-top">
+    <div class="card-icon">☕</div>
+    <div>
+      <div class="eyebrow">COFFEE DATE</div>
+      <h3>Coffee & Study</h3>
+      <p>Untuk waktu ngopi, membaca buku, atau mengerjakan project.</p>
     </div>
-    <div class="memory">
-      <div class="memory-icon">🏍️</div>
-      <div>
-        <h3>Touring Era</h3>
-        <p>Soundtrack perjalanan menuju tempat baru dan pemandangan favorit.</p>
-      </div>
+  </div>
+  <a class="action spotify-button"
+     href="https://open.spotify.com/playlist/4lscWbdYDo6g4f7sNbCXSO"
+     target="_blank" rel="noopener noreferrer"
+     data-playlist="Coffee Playlist">☕ Open Coffee Playlist ↗</a>
+</article>
+
+<h2 class="section-title">🎼 Artist Corners</h2>
+
+<article class="playlist-card">
+  <div class="card-top">
+    <div class="card-icon">🎻</div>
+    <div>
+      <div class="eyebrow">SOFT & DREAMY</div>
+      <h3>Laufey Corner</h3>
+      <p>Tempat untuk menikmati musik Laufey yang lembut dan dreamy.</p>
     </div>
-    <div class="memory">
-      <div class="memory-icon">☕</div>
-      <div>
-        <h3>Coffee Date</h3>
-        <p>Lagu untuk suasana kafe, obrolan santai, dan waktu istirahat.</p>
-      </div>
+  </div>
+  <a class="action spotify-button"
+     href="https://open.spotify.com/artist/7gW0r5CkdEUMm42w9XpyZO"
+     target="_blank" rel="noopener noreferrer"
+     data-playlist="Laufey">🎻 Explore Laufey ↗</a>
+</article>
+
+<article class="playlist-card">
+  <div class="card-top">
+    <div class="card-icon">🌙</div>
+    <div>
+      <div class="eyebrow">MIDNIGHT DRIVE</div>
+      <h3>Cigarettes After Sex</h3>
+      <p>Nuansa ambient untuk menemani waktu santai dan malam yang tenang.</p>
     </div>
-  </section>
-  <section class="note">
-    <div class="big-heart">💗</div>
-    <strong>A song for every little memory.</strong>
-    <p style="margin-top:8px">
-      Semoga setiap lagu di sini bisa menjadi bagian kecil dari cerita
-      Our Little Universe.
-    </p>
-  </section>
-  <a class="back" href="castle-map.html">🏰 Back to Castle Map</a>
-  <footer class="footer">
-    Made with care by Princess Echa 🎀<br>
-    Our Little Universe · Music Room
-  </footer>
+  </div>
+  <a class="action spotify-button"
+     href="https://open.spotify.com/artist/1QAJqy2dA3ihHBFIHRphZj"
+     target="_blank" rel="noopener noreferrer"
+     data-playlist="Cigarettes After Sex">🌌 Explore CAS ↗</a>
+</article>
+
+<article class="playlist-card">
+  <div class="card-top">
+    <div class="card-icon">🌹</div>
+    <div>
+      <div class="eyebrow">VINTAGE & DREAMY</div>
+      <h3>Lana Del Rey</h3>
+      <p>Sudut untuk musik dengan nuansa vintage dan cinematic.</p>
+    </div>
+  </div>
+  <a class="action spotify-button"
+     href="https://open.spotify.com/artist/00FQb4jTyendYWaN8pK0wa"
+     target="_blank" rel="noopener noreferrer"
+     data-playlist="Lana Del Rey">🌹 Explore Lana ↗</a>
+</article>
+
+<h2 class="section-title">🎀 Choose Your Mood</h2>
+<p class="section-intro">Pilih suasana hatimu untuk mendapatkan rekomendasi kategori.</p>
+
+<div class="mood-grid">
+  <button class="mood-button" data-mood="princess" aria-pressed="false">
+    <span class="mood-emoji">🌸</span>
+    <strong>Soft Princess</strong>
+  </button>
+  <button class="mood-button" data-mood="coffee" aria-pressed="false">
+    <span class="mood-emoji">☕</span>
+    <strong>Coffee Date</strong>
+  </button>
+  <button class="mood-button" data-mood="midnight" aria-pressed="false">
+    <span class="mood-emoji">🌙</span>
+    <strong>Midnight Ride</strong>
+  </button>
+  <button class="mood-button" data-mood="comfort" aria-pressed="false">
+    <span class="mood-emoji">🤍</span>
+    <strong>Comfort Songs</strong>
+  </button>
+</div>
+
+<div class="mood-result" id="moodResult" aria-live="polite">
+  Pilih satu mood di atas untuk melihat rekomendasinya. 💌
+</div>
+
+<h2 class="section-title">💌 Our Song Memories</h2>
+<p class="section-intro">Beberapa bab perjalanan yang bisa kita lengkapi dengan lagu pilihan kita.</p>
+
+<section class="panel">
+  <div class="memory">
+    <div class="memory-icon">🌋</div>
+    <div>
+      <h3>Bromo Era</h3>
+      <p>Lagu untuk perjalanan, pemandangan, dan kenangan Bromo.</p>
+    </div>
+  </div>
+  <div class="memory">
+    <div class="memory-icon">🌙</div>
+    <div>
+      <h3>Dieng Era</h3>
+      <p>Tempat untuk lagu yang cocok dengan kenangan Dieng dan momen proposal.</p>
+    </div>
+  </div>
+  <div class="memory">
+    <div class="memory-icon">🏍️</div>
+    <div>
+      <h3>Touring Era</h3>
+      <p>Soundtrack perjalanan menuju tempat baru dan pemandangan favorit.</p>
+    </div>
+  </div>
+  <div class="memory">
+    <div class="memory-icon">☕</div>
+    <div>
+      <h3>Coffee Date</h3>
+      <p>Lagu untuk suasana kafe, obrolan santai, dan waktu istirahat.</p>
+    </div>
+  </div>
+</section>
+
+<section class="note">
+  <div class="big-heart">💗</div>
+  <strong>A song for every little memory.</strong>
+  <p style="margin-top:8px">
+    Semoga setiap lagu di sini bisa menjadi bagian kecil dari cerita
+    Our Little Universe.
+  </p>
+</section>
+
+<a class="back" href="castle-map.html">🏰 Back to Castle Map</a>
+
+<footer class="footer">
+  Made with care by Princess Echa 🎀<br>
+  Our Little Universe · Music Room
+</footer>
+
 </main>
+
 <script>
 const vinyl = document.getElementById("vinyl");
 const playerStatus = document.getElementById("playerStatus");
+
 document.querySelectorAll("[data-playlist]").forEach(link => {
   link.addEventListener("click", () => {
-    const name = link.dataset.playlist;
-    playerStatus.textContent = "♡ Opening " + name + "…";
+    playerStatus.textContent = "♡ Opening " + link.dataset.playlist + "…";
     vinyl.classList.add("playing");
   });
 });
+
 const moodRecommendations = {
   princess: {
     text: "🌸 Soft Princess — coba mulai dari Laufey untuk suasana lembut dan dreamy.",
@@ -561,7 +628,7 @@ const moodRecommendations = {
     search: "https://open.spotify.com/playlist/4lscWbdYDo6g4f7sNbCXSO"
   },
   midnight: {
-    text: "🌙 Midnight Ride — Cigarettes After Sex cocok untuk nuansa ambient. Dengarkan saat berhenti atau sebagai teman perjalanan penumpang; pengendara harus tetap fokus ke jalan.",
+    text: "🌙 Midnight Ride — Cigarettes After Sex cocok untuk nuansa ambient. Pengendara harus tetap fokus ke jalan.",
     search: "https://open.spotify.com/artist/1QAJqy2dA3ihHBFIHRphZj"
   },
   comfort: {
@@ -569,20 +636,26 @@ const moodRecommendations = {
     search: "https://open.spotify.com/playlist/6Q9nQactoasvya7zQmy4PK"
   }
 };
+
 const moodResult = document.getElementById("moodResult");
+
 document.querySelectorAll("[data-mood]").forEach(button => {
   button.addEventListener("click", () => {
     document.querySelectorAll("[data-mood]").forEach(item => {
       item.classList.remove("selected");
       item.setAttribute("aria-pressed", "false");
     });
+
     button.classList.add("selected");
     button.setAttribute("aria-pressed", "true");
+
     const mood = moodRecommendations[button.dataset.mood];
     moodResult.replaceChildren();
+
     const description = document.createElement("p");
     description.textContent = mood.text;
     moodResult.appendChild(description);
+
     const link = document.createElement("a");
     link.href = mood.search;
     link.target = "_blank";
@@ -593,5 +666,6 @@ document.querySelectorAll("[data-mood]").forEach(button => {
   });
 });
 </script>
+
 </body>
 </html>
