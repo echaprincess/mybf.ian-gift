@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffe4f2">
+<title>Our Little Universe</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 25px 16px;
+  display: grid;
+  place-items: center;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  background: linear-gradient(145deg,#ffe4f2,#f3e8ff,#dbeafe);
+  color: #a21caf;
+}
+main {
+  width: 100%;
+  max-width: 520px;
+  padding: 30px 22px;
+  text-align: center;
+  background: #ffffffdf;
+  border: 1px solid white;
+  border-radius: 28px;
+  box-shadow: 0 15px 35px #be185d16;
+}
+.emoji {
+  font-size: 65px;
+  margin-bottom: 12px;
+}
+h1 {
+  color: #be185d;
+  font-size: 29px;
+}
+p {
+  color: #786981;
+  line-height: 1.8;
+  font-size: 14px;
+}
+.tag {
+  display: inline-block;
+  margin: 8px 0 15px;
+  padding: 8px 13px;
+  border-radius: 30px;
+  background: #fce7f3;
+  font-size: 11px;
+}
+a {
+  display: block;
+  margin-top: 13px;
+  padding: 14px;
+  border-radius: 16px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+.primary {
+  background: linear-gradient(135deg,#ec4899,#c084fc);
+  color: white;
+}
+.secondary {
+  background: #f3e8ff;
+  color: #86198f;
+}
+footer {
+  margin-top: 22px;
+  color: #a18ca5;
+  font-size: 11px;
+}
+</style>
+</head>
+<body>
+<main>
+  <div class="emoji" id="emoji">✨</div>
+  <h1 id="title">Our Little Room</h1>
+  <div class="tag">OUR LITTLE UNIVERSE</div>
+  <p id="description">
+    Selamat datang di ruangan kecil kita.
+  </p>
+  <a class="primary" id="action" href="castle-map.html">
+    🏰 Explore Castle Map
+  </a>
+  <a class="secondary" href="index.html">
+    🏠 Back to Home
+  </a>
+  <footer>
+    Made with care by Princess Echa 🎀
+  </footer>
+</main>
+<script>
+const rooms = {
+  music: {
+    title: "Music Room",
+    emoji: "🎧",
+    description: "Tempat soundtrack, playlist, dan lagu-lagu favorit.",
+    link: "music-room.html",
+    label: "🎧 Open Music Room"
+  },
+  memory: {
+    title: "Memory Room",
+    emoji: "💌",
+    description: "Tempat menyimpan cerita dan kenangan perjalanan."
+  },
+  healing: {
+    title: "Healing Room",
+    emoji: "🧸",
+    description: "A little corner for comfort, rest, and encouragement."
+  },
+  promise: {
+    title: "Promise Room",
+    emoji: "🤍",
+    description: "Tempat untuk refleksi, doa, dan janji yang bermakna."
+  },
+  cafe: {
+    title: "Cafe Room",
+    emoji: "☕",
+    description: "Sudut kafe virtual untuk kenangan dan obrolan santai."
+  },
+  gallery: {
+    title: "Gallery Room",
+    emoji: "📸",
+    description: "Ruang untuk foto dan momen favorit."
+  },
+  story: {
+    title: "Story Room",
+    emoji: "📖",
+    description: "Sebuah buku kecil untuk cerita Our Little Universe."
+  },
+  dream: {
+    title: "Dream Room",
+    emoji: "🌙",
+    description: "Tempat menuliskan impian dan harapan."
+  },
+  touring: {
+    title: "Touring Room",
+    emoji: "🏍️",
+    description: "Tempat merencanakan rute, mencatat perjalanan, dan mengumpulkan stempel."
+  },
+  garden: {
+    title: "Garden Room",
+    emoji: "🌻",
+    description: "Taman virtual kecil yang akan kita kembangkan."
+  },
+  plushie: {
+    title: "Plushie Room",
+    emoji: "🐈",
+    description: "Tempat untuk koleksi karakter lucu dan teman-teman kecil."
+  },
+  "guardian-lab": {
+    title: "Guardian Lab",
+    emoji: "🔬",
+    description: "Area pengembangan dengan Memory Lab dan Developer Console."
+  },
+  gift: {
+    title: "Gift Room",
+    emoji: "🎁",
+    description: "Ruang hadiah dan kejutan spesial."
+  },
+  secret: {
+    title: "Secret Room",
+    emoji: "🗝️",
+    description: "Ada sesuatu yang akan kita tambahkan ke sini."
+  },
+  future: {
+    title: "Future Room",
+    emoji: "🌎",
+    description: "Tempat mencatat rencana dan harapan untuk masa depan."
+  },
+  wish: {
+    title: "Wish Room",
+    emoji: "⭐",
+    description: "Tempat menyimpan wish list dan mimpi-mimpi kecil."
+  }
+};
+const key = new URLSearchParams(location.search).get("room");
+const room = rooms[key];
+if (room) {
+  document.title = room.title + " | Our Little Universe";
+  document.getElementById("title").textContent = room.title;
+  document.getElementById("emoji").textContent = room.emoji;
+  document.getElementById("description").textContent = room.description;
+  if (room.link) {
+    const action = document.getElementById("action");
+    action.href = room.link;
+    action.textContent = room.label;
+  }
+} else {
+  document.getElementById("title").textContent = "Room Not Found";
+  document.getElementById("emoji").textContent = "🔎";
+  document.getElementById("description").textContent =
+    "Ruangan ini tidak ditemukan. Kembali ke Castle Map untuk memilih pintu lain.";
+}
+</script>
+</body>
+</html>
